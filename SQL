@@ -4,7 +4,7 @@
 SELECT login,
        COUNT("Couriers".id) AS cnt
 FROM "Couriers"
-LEFT JOIN "Orders" ON "Orders"."courierId"="Couriers".id
+INNER JOIN "Orders" ON "Couriers".id="Orders"."courierId"
 WHERE "Orders"."inDelivery" = TRUE
 GROUP BY login;
 
